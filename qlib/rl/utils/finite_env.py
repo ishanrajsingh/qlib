@@ -11,7 +11,19 @@ from __future__ import annotations
 import copy
 import warnings
 from contextlib import contextmanager
-from typing import Any, Callable, Dict, Generator, List, Optional, Set, Tuple, Type, Union, cast
+from typing import (
+    Any,
+    Callable,
+    Dict,
+    Generator,
+    List,
+    Optional,
+    Set,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 
 import gym
 import numpy as np
@@ -123,7 +135,10 @@ class FiniteVectorEnv(BaseVectorEnv):
     _logger: list[LogWriter]
 
     def __init__(
-        self, logger: LogWriter | list[LogWriter] | None, env_fns: list[Callable[..., gym.Env]], **kwargs: Any
+        self,
+        logger: LogWriter | list[LogWriter] | None,
+        env_fns: list[Callable[..., gym.Env]],
+        **kwargs: Any,
     ) -> None:
         super().__init__(env_fns, **kwargs)
 
